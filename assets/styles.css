@@ -113,6 +113,27 @@ header {
 }
 
 
+/* ─── Trophy celebration ─────────────────────────────────────────────── */
+#trophy {
+  font-size: 4rem;                /* big emoji */
+  text-align: center;
+  opacity: 0;                     /* start invisible */
+  transform: translateY(30px) scale(0.8);
+  transition: opacity .4s ease-out;
+}
+
+#trophy.celebrate {
+  animation: lift 1.2s ease-out forwards;
+}
+
+@keyframes lift {
+  0%   { opacity: 0; transform: translateY(30px) scale(0.8) rotate(-10deg); }
+  30%  { opacity: 1; transform: translateY(-10px) scale(1.1) rotate(5deg); }
+  60%  { transform: translateY(0)     scale(1)   rotate(-3deg); }
+  100% { transform: translateY(0)     scale(1)   rotate(0deg); }
+}
+/* ────────────────────────────────────────────────────────────────────── */
+
 @media (max-width: 480px) {
   body {
     padding: 1rem;

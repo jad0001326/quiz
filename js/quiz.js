@@ -89,4 +89,12 @@ function endGame () {
   card.classList.add('hidden');
   endScreen.classList.remove('hidden');
   finalMsgEl.textContent = `You scored ${score} out of ${questions.length}!`;
+  // Celebrate perfect score with trophy animation
+  if (score === questions.length) {
+    const trophy = document.getElementById('trophy');
+    if (trophy) {
+      trophy.classList.remove('hidden');
+      trophy.classList.add('celebrate');
+    }
+  }
 }
