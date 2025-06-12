@@ -1,4 +1,12 @@
-/* assets/styles.css  ─────────────────────────────────────── */
+:root {
+  --primary-color: #003049;     /* deep navy */
+  --secondary-color: #FCBF49;   /* warm gold */
+  --accent-color:   #D62828;    /* red accent */
+  --correct-color:  #70e000;    /* bright green for correct answers */
+  --incorrect-color:#ff595e;    /* bright coral for wrong answers */
+  --bg-color:       #f7f7f7;
+  --text-color:     #222;
+}
 
 * { box-sizing: border-box; }
 
@@ -9,6 +17,8 @@ body {
   line-height: 1.5;
   display: flex;
   justify-content: center;
+  background: var(--bg-color);
+  color: var(--text-color);
 }
 
 main, header, section {
@@ -20,12 +30,6 @@ h1 { margin-top: 0; }
 
 label { font-weight: 600; }
 
-#status {
-  display: flex;
-  justify-content: space-between;
-  font-weight: 600;
-  margin: 1rem 0;
-}
 
 ul#answers {
   list-style: none;
@@ -43,13 +47,14 @@ ul#answers li {
 
 ul#answers li:hover { background: #f3f3f3; }
 
-ul#answers li.right  { background: #c4f7c4; border-color: #7ad27a; }
-ul#answers li.wrong  { background: #ffc9c9; border-color: #e39797; }
+ul#answers li.right  { background: var(--correct-color);  border-color: var(--correct-color); }
+ul#answers li.wrong  { background: var(--incorrect-color); border-color: var(--incorrect-color); }
 
-button, a#play {
+button,
+a#play {
   display: inline-block;
   padding: .6rem 1.4rem;
-  background: #0366d6;
+  background: var(--primary-color);
   color: #fff;
   text-decoration: none;
   border: none;
@@ -58,6 +63,22 @@ button, a#play {
   transition: background .2s;
 }
 
-button:hover, a#play:hover { background: #024ca2; }
+button:hover,
+a#play:hover {
+  background: var(--accent-color);
+}
 
 .hidden { display: none; }
+
+
+header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+#status {
+  background: var(--secondary-color);
+  padding: .4rem 1rem;
+  border-radius: 4px;
+  color: #000;
+}
