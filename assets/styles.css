@@ -16,8 +16,9 @@ body {
   padding: 2rem;
   line-height: 1.5;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   background: var(--bg-color);
   color: var(--text-color);
 }
@@ -89,6 +90,7 @@ select {
 header {
   text-align: center;
   margin-bottom: 1.5rem;
+  margin-top: 2rem;
 }
 
 #status {
@@ -96,6 +98,18 @@ header {
   padding: .4rem 1rem;
   border-radius: 4px;
   color: #000;
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+}
+
+#card {
+  max-width: 600px;
+  width: 100%;
+  margin: 2rem auto;
 }
 
 
