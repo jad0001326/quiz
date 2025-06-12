@@ -53,6 +53,7 @@ function renderQuestion () {
   scoreEl.textContent = `${score} / ${questions.length}`;
   nextBtn.classList.add('hidden');
   answersEl.classList.remove('locked');
+  card.classList.remove('hidden');
 }
 
 // ---------- Interaction ----------
