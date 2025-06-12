@@ -17,9 +17,18 @@
     </select>
 
     <br><br>
-    <a id="play" href="quiz.html">Play</a>
-  </main>
+    <!-- 1️⃣ Replace the old link with this -->
+    <a id="play" href="#">Play</a>
 
-  <script type="module" src="js/app.js"></script>
+    <!-- 2️⃣ Add this inline script right after the link -->
+    <script type="module">
+      const play = document.getElementById('play');
+      play.addEventListener('click', event => {
+        event.preventDefault();                      // stop default jump
+        const diff = document.getElementById('difficulty').value;
+        window.location = `quiz.html?difficulty=${diff}`;
+      });
+    </script>
+  </main>
 </body>
 </html>
