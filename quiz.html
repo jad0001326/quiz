@@ -1,36 +1,52 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <title>QuizStorm – Play</title>
-  <link rel="stylesheet" href="assets/styles.css" />
-</head>
+:root {
+  --primary-color: #003049;     /* deep navy */
+  --secondary-color: #FCBF49;   /* warm gold */
+  --accent-color:   #D62828;    /* red accent */
+  --correct-color:  #70e000;    /* bright green for correct answers */
+  --incorrect-color:#ff595e;    /* bright coral for wrong answers */
+  --bg-color:       #f7f7f7;
+  --text-color:     #222;
+}
 
-<body>
-  <!-- header shows score + timer -->
-  <header>
-    <h1 id="title">QuizStorm – General Knowledge</h1>
-    <div id="status">
-      <span id="score">0 / 10</span>
-      <span id="timer">00:00</span>
-    </div>
-  </header>
+body {
+  font-family: system-ui, sans-serif;
+  margin: 0;
+  padding: 2rem;
+  line-height: 1.5;
+  display: flex;
+  justify-content: center;
+  background: var(--bg-color);
+  color: var(--text-color);
+}
 
-  <!-- main quiz card -->
-  <main id="card" class="hidden">
-    <h2 id="question"></h2>
-    <ul id="answers"></ul>
-    <button id="next" class="hidden">Next&nbsp;→</button>
-  </main>
+button, a#play {
+  display: inline-block;
+  padding: .6rem 1.4rem;
+  background: var(--primary-color);
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background .2s;
+}
 
-  <!-- end-screen replaces the card when done -->
-  <section id="end-screen" class="hidden">
-    <h2 id="final-msg"></h2>
-    <a href="quiz.html">Play again</a> |
-    <a href="index.html">Home</a>
-  </section>
+button:hover,
+a#play:hover {
+  background: var(--accent-color);
+}
 
-  <!-- main quiz logic will live here -->
-  <script type="module" src="js/quiz.js"></script>
-</body>
-</html>
+ul#answers li.right  { background: var(--correct-color);  border-color: var(--correct-color); }
+ul#answers li.wrong  { background: var(--incorrect-color); border-color: var(--incorrect-color); }
+
+header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+#status {
+  background: var(--secondary-color);
+  padding: .4rem 1rem;
+  border-radius: 4px;
+  color: #000;
+}
