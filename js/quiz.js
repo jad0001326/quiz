@@ -90,7 +90,7 @@ function endGame () {
   endScreen.classList.remove('hidden');
   finalMsgEl.textContent = `You scored ${score} out of ${questions.length}!`;
   // Celebrate perfect score with trophy animation
-  if (score === questions.length) {
+  if (score >= 1) {
     const trophy = document.getElementById('trophy');
     if (trophy) {
       trophy.classList.remove('hidden');
