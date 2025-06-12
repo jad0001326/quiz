@@ -6,8 +6,20 @@
   <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
-  <h1>QuizStorm – General Knowledge</h1>
-  <a href="quiz.html">Play</a>
+  <main id="start">
+    <h1>QuizStorm – General Knowledge</h1>
+
+    <label for="difficulty">Choose difficulty:</label>
+    <select id="difficulty" name="difficulty">
+      <option value="easy">Easy</option>
+      <option value="medium" selected>Medium</option>
+      <option value="hard">Hard</option>
+    </select>
+
+    <br><br>
+    <a id="play" href="quiz.html">Play</a>
+  </main>
+
   <script type="module" src="js/app.js"></script>
 </body>
 </html>
