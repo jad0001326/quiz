@@ -7,7 +7,7 @@
 </head>
 <body>
   <main id="start">
-    <h1>QuizStorm – General Knowledge</h1>
+    <h1>QuizStorm - General Knowledge</h1>
 
     <label for="difficulty">Choose difficulty:</label>
     <select id="difficulty" name="difficulty">
@@ -17,11 +17,10 @@
     </select>
 
     <br><br>
-    <!-- 1️⃣ Replace the old link with this -->
+    
     <a id="play" href="#">Play</a>
 
-    <!-- 2️⃣ Add this inline script right after the link -->
-    <script type="module">
+     <script type="module">
       const play = document.getElementById('play');
       play.addEventListener('click', event => {
         event.preventDefault();                      // stop default jump
