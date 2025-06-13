@@ -89,21 +89,21 @@ label  { font-weight: 600; }
   background: var(--secondary-color);
   max-width: 340px;
   width: 75%;
-  height: 32px;          /* slimmer bar */
+  height: 28px;        /* slimmer bar */
   margin: 0 auto 1rem;
   border-radius: 4px;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 0.8rem;     /* tighter horizontal padding */
+  padding: 0 0.6rem;   /* less horizontal padding */
 
   font-weight: 600;
-  font-size: 0.9rem;     /* smaller label text */
+  font-size: 0.8rem;   /* smaller label text */
 }
 
 #status span {           /* numeric values slightly larger */
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 700;
 }
 /* ────────────────────────────────────────────────────────────────── */
