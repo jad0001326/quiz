@@ -87,7 +87,7 @@ label  { font-weight: 600; }
 /* ─── Compact score / timer bar ──────────────────────────────────── */
 #status {
   background: var(--secondary-color);
-  max-width: 340px;
+  max-width: 500px;
   width: 100%;
   height: 28px;        /* slimmer bar */
   margin: 0 auto 1rem;
