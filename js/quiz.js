@@ -50,7 +50,10 @@ function renderQuestion () {
     answersEl.appendChild(li);
   });
 
-  scoreEl.textContent = `${score} / ${questions.length}`;
+  // show nothing on the first question so “0 / 10” doesn’t flash
+scoreEl.textContent = (current === 0 && score === 0)
+  ? ''
+  : `${score} / ${questions.length}`;
   nextBtn.classList.add('hidden');
   answersEl.classList.remove('locked');
   card.classList.remove('hidden');
