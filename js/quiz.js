@@ -85,16 +85,29 @@ function updateTimer (sec) {
 }
 
 function endGame () {
+  // stop the clock
   if (stopClock) stopClock();
+
+  // hide the question card, show the end screen
   card.classList.add('hidden');
   endScreen.classList.remove('hidden');
+
+  // show the final score
   finalMsgEl.textContent = `You scored ${score} out of ${questions.length}!`;
-  // Celebrate perfect score with trophy animation
-  if (score >= 1) {
-    const trophy = document.getElementById('trophy');
-    if (trophy) {
-      trophy.classList.remove('hidden');
-      trophy.classList.add('celebrate');
-    }
+
+  // clear the “0 / 10” score text so it’s not stuck on the end screen
+  scoreEl.textContent = '';
+
+  // Trophy celebration (any non-zero score)
+  const trophy = document.getElementById('trophy');
+  if (score >= 1 && trophy) {
+    trophy.classList.remove('hidden');
+    trophy.classList.add('celebrate');
+
+    // auto-hide trophy after 5 seconds
+    setTimeout(() => {
+      trophy.classList.add('hidden');
+    }, 5000);
   }
 }
+

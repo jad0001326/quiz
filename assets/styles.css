@@ -1,7 +1,7 @@
 :root {
   --primary-color: #44CCFF;   /* bright cyan */
-  --secondary-color: #44CCFF; /* cyan for status bar */
-  --accent-color:   #44CCFF;  /* cyan hover/focus */
+  --secondary-color: #D138BF; /* magenta for status/timer bar */
+  --accent-color:   #E46ADF;  /* lighter magenta for hover */
   --correct-color:  #35FF69;  /* neon green */
   --incorrect-color:#D138BF;  /* magenta */
   --bg-color:       #494947;  /* dark grey background */
@@ -75,7 +75,7 @@ label  { font-weight: 600; }
   color: #fff;
   border: 2px solid #000;
   padding: 1rem 0.5rem;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   text-decoration: none;
   transition: background .2s;
 }
