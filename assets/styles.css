@@ -1,10 +1,10 @@
 :root {
-  --primary-color: #44CCFF;   /* bright cyan for buttons/status bar */
-  --secondary-color: #44CCFF; /* cyan (status bar background) */
+  --primary-color: #44CCFF;   /* bright cyan */
+  --secondary-color: #44CCFF; /* cyan for status bar */
   --accent-color:   #44CCFF;  /* cyan hover/focus */
-  --correct-color:  #35FF69;  /* neon green for correct answers */
-  --incorrect-color:#D138BF;  /* magenta for incorrect answers */
-  --bg-color:       #494947;  /* dark‑grey background */
+  --correct-color:  #35FF69;  /* neon green */
+  --incorrect-color:#D138BF;  /* magenta */
+  --bg-color:       #494947;  /* dark grey background */
   --text-color:     #f0f0f0;
   --tile-color:     #D138BF;  /* magenta nav tiles */
 }
@@ -23,7 +23,7 @@ body {
   color: var(--text-color);
 }
 
-/* ─── Lightning hero banner ─────────────────────────────────────────── */
+/* ─── Hero banner ─────────────────────────────────────────────────── */
 #site-header {
   width: 75%;
   height: 200px;
@@ -49,7 +49,7 @@ body {
   font-family: 'Jolly Lodger', cursive;
   line-height: 0.9;
 }
-/* ───────────────────────────────────────────────────────────────────── */
+/* ────────────────────────────────────────────────────────────────── */
 
 /* Headings & nav links use Chewy */
 h1, h2, #site-nav a { font-family: 'Chewy', cursive; }
@@ -58,7 +58,7 @@ main, section { max-width: 600px; width: 100%; }
 header { width: 100%; }
 label  { font-weight: 600; }
 
-/* ─── Navigation tiles ──────────────────────────────────────────────── */
+/* ─── Navigation tiles ───────────────────────────────────────────── */
 #site-nav {
   display: flex;
   width: 100%;
@@ -80,7 +80,7 @@ label  { font-weight: 600; }
 
 #site-nav a:hover,
 #site-nav a:focus { background: var(--accent-color); }
-/* ───────────────────────────────────────────────────────────────────── */
+/* ────────────────────────────────────────────────────────────────── */
 
 /* Status bar */
 #status {
