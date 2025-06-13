@@ -154,7 +154,7 @@ ul#answers li:focus-visible {
   100% { transform: translateY(0)   scale(1)    rotate(0deg); }
 }
 
-# ─── Landing-page sizing tweaks ────────────────────────────────── */
+/* ─── Landing-page sizing tweaks ────────────────────────────────── */
 #name-block {
   text-align: center;
   margin-bottom: 1.5rem;
