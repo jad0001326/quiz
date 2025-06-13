@@ -4,8 +4,8 @@
   --accent-color:   #7494EA;  /* periwinkle hover/focus */
   --correct-color:  #35FF69;  /* neon green */
   --incorrect-color:#D138BF;  /* magenta */
-  --bg-color:       #494947;  /* dark grey background */
-  --text-color:     #222;
+  --bg-color:       #494947;  /* dark‑grey background */
+  --text-color:     #f0f0f0;
   --tile-color:     #44CCFF;  /* cyan nav tiles */
 }
 
@@ -18,50 +18,89 @@ body {
   line-height: 1.5;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  background: var(--bg-color);    /* dark grey background */
+  background: var(--bg-color);
   color: var(--text-color);
 }
 
-/* ─── Hero banner ─────────────────────────────────────────────────── */
-#hero {
+/* ─── Lightning hero banner ─────────────────────────────────────────── */
+#site-header {
+  width: 75%;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+  margin: 25px auto 1.5rem;
+}
+
+#site-header img {
   width: 100%;
-  height: 180px;
-  background: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1rem;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.9;
 }
 
-#hero h1 {
-  font-family: 'Chewy', cursive;
-  font-size: 3rem;
-  color: #fff;
+#site-header h1 {
+  position: absolute;
+  bottom: 0;
+  left: 16px;
   margin: 0;
+  color: #fff;
+  font-size: 150px;
+  font-family: 'Jolly Lodger', cursive;
+  line-height: 0.9;
 }
-/* ─────────────────────────────────────────────────────────────────── */
+/* ───────────────────────────────────────────────────────────────────── */
 
+/* Headings & nav links use Chewy */
 h1, h2, #site-nav a { font-family: 'Chewy', cursive; }
 
-main, section {
-  max-width: 600px;
-  width: 100%;
-}
-
+main, section { max-width: 600px; width: 100%; }
 header { width: 100%; }
+label  { font-weight: 600; }
 
-h1 { margin-top: 0; }
-
-label { font-weight: 600; }
-
-
-ul#answers {
-  list-style: none;
-  padding: 0;
+/* ─── Navigation tiles ──────────────────────────────────────────────── */
+#site-nav {
+  display: flex;
+  width: 100%;
+  margin-bottom: 0.5rem;
 }
 
+#site-nav a {
+  flex: 1 1 0;
+  display: block;
+  text-align: center;
+  background: var(--tile-color);
+  color: #fff;
+  border: 2px solid #000;
+  padding: 1rem 0.5rem;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: background .2s;
+}
+
+#site-nav a:hover,
+#site-nav a:focus { background: var(--accent-color); }
+/* ───────────────────────────────────────────────────────────────────── */
+
+/* Status bar */
+#status {
+  background: var(--secondary-color);
+  padding: .4rem 1rem;
+  border-radius: 4px;
+  color: #000;
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto 1rem;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+}
+
+/* Quiz card */
+#card { max-width: 600px; width: 100%; margin: 1rem auto 2rem; }
+
+/* Answer list */
+ul#answers { list-style: none; padding: 0; }
 ul#answers li {
   margin: .5rem 0;
   padding: .6rem 1rem;
@@ -70,12 +109,11 @@ ul#answers li {
   border-radius: 4px;
   transition: background .2s;
 }
-
-ul#answers li:hover { background: #f3f3f3; }
-
+ul#answers li:hover  { background: #5a5a5a; }
 ul#answers li.right  { background: var(--correct-color);  border-color: var(--correct-color); }
 ul#answers li.wrong  { background: var(--incorrect-color); border-color: var(--incorrect-color); }
 
+/* Buttons */
 button,
 a#play {
   display: inline-block;
@@ -88,11 +126,8 @@ a#play {
   cursor: pointer;
   transition: background .2s;
 }
-
 button:hover,
-a#play:hover {
-  background: var(--accent-color);
-}
+a#play:hover { background: var(--accent-color); }
 
 button:focus-visible,
 a#play:focus-visible,
@@ -101,79 +136,13 @@ ul#answers li:focus-visible {
   outline-offset: 2px;
 }
 
-select {
-  padding: .5rem .8rem;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  background: #fff;
-}
-
-.hidden { display: none; }
-
-
-
-header {
-  text-align: center;
-  margin-bottom: 1.5rem;
-  margin-top: 2rem;
-}
-
-/* ─── Primary navigation bar tiles ────────────────────────────────── */
-#site-nav {
-  display: flex;
-  width: 100%;
-}
-
-#site-nav a {
-  flex: 1 1 0;
-  display: block;
-  text-align: center;
-  background: var(--tile-color);
-  color: #fff;
-  border: 2px solid #000;
-  padding: 1rem 0.5rem;
-  font-family: 'Chewy', cursive;
-  font-size: 1.2rem;
-  text-decoration: none;
-  transition: background .2s;
-}
-
-#site-nav a:hover,
-#site-nav a:focus {
-  background: var(--accent-color);
-}
-/* ─────────────────────────────────────────────────────────────────── */
-
-#status {
-  background: var(--secondary-color);
-  padding: .4rem 1rem;
-  border-radius: 4px;
-  color: #000;
-  max-width: 500px;
-  width: 100%;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  font-weight: 600;
-}
-
-#card {
-  max-width: 600px;
-  width: 100%;
-  margin: 2rem auto;
-}
-
-
-/* ─── Trophy celebration ─────────────────────────────────────────────── */
+/* Trophy celebration */
 #trophy {
-  font-size: 6rem;                /* big emoji */
+  font-size: 6rem;
   text-align: center;
   transform: translateY(30px) scale(0.8);
 }
-
-#trophy.celebrate {
-  animation: lift 3s ease-out forwards;
-}
+#trophy.celebrate { animation: lift 3s ease-out forwards; }
 
 @keyframes lift {
   0%   { transform: translateY(40px) scale(0.8) rotate(-10deg); }
@@ -182,19 +151,13 @@ header {
   80%  { transform: translateY(0)   scale(1)    rotate(3deg); }
   100% { transform: translateY(0)   scale(1)    rotate(0deg); }
 }
-/* ────────────────────────────────────────────────────────────────────── */
 
+/* Mobile */
 @media (max-width: 480px) {
-  body {
-    padding: 1rem;
-  }
-
-  button,
-  a#play {
-    width: 100%;
-    text-align: center;
-  }
-
+  body { padding: 1rem; }
+  button, a#play { width: 100%; text-align: center; }
   #site-nav { flex-direction: column; }
   #site-nav a { margin-bottom: .5rem; }
+  #site-header { width: 100%; height: 140px; }
+  #site-header h1 { font-size: 100px; }
 }
