@@ -99,7 +99,7 @@ label  { font-weight: 600; }
   padding: 0 1rem;         /* slightly more horizontal space */
 
   font-weight: 600;
-  font-size: 1rem;         /* larger label text */
+  font-size: 5rem;         /* larger label text */
 }
 
 #status span {           /* numeric values slightly larger */
