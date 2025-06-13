@@ -1,12 +1,12 @@
 :root {
-  --primary-color: #003049;     /* deep navy */
-  --secondary-color: #FCBF49;   /* warm gold */
-  --accent-color:   #D62828;    /* red accent */
-  --correct-color:  #70e000;    /* bright green for correct answers */
-  --incorrect-color:#ff595e;    /* bright coral for wrong answers */
-  --bg-color:       #f7f7f7;
+  --primary-color: #44CCFF;   /* bright cyan */
+  --secondary-color: #44CCFF; /* cyan (status bar, default links) */
+  --accent-color:   #7494EA;  /* periwinkle hover/focus */
+  --correct-color:  #35FF69;  /* neon green */
+  --incorrect-color:#D138BF;  /* magenta */
+  --bg-color:       #494947;  /* dark grey background */
   --text-color:     #222;
-  --tile-color: #9933cc;    /* purple nav tiles */
+  --tile-color:     #44CCFF;  /* cyan nav tiles */
 }
 
 * { box-sizing: border-box; }
@@ -20,7 +20,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #8a8a8a;    /* grey backdrop as in original mock‑up */
+  background: var(--bg-color);    /* dark grey background */
   color: var(--text-color);
 }
 
@@ -140,7 +140,7 @@ header {
 
 #site-nav a:hover,
 #site-nav a:focus {
-  background: #bb55ff;
+  background: var(--accent-color);
 }
 /* ─────────────────────────────────────────────────────────────────── */
 
