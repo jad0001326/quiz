@@ -87,23 +87,23 @@ label  { font-weight: 600; }
 /* ─── Compact score / timer bar ──────────────────────────────────── */
 #status {
   background: var(--secondary-color);
-  max-width: 340px;      /* narrower bar */
+  max-width: 340px;
   width: 75%;
-  height: 42px;          /* slim height */
+  height: 32px;          /* slimmer bar */
   margin: 0 auto 1rem;
   border-radius: 4px;
 
   display: flex;
-  align-items: center;   /* vertically centre numbers */
+  align-items: center;
   justify-content: space-between;
-  padding: 0 1rem;       /* horizontal padding only */
+  padding: 0 0.8rem;     /* tighter horizontal padding */
 
   font-weight: 600;
-  font-size: 1.1rem;     /* smaller label text */
+  font-size: 0.9rem;     /* smaller label text */
 }
 
-#status span {           /* numeric values larger */
-  font-size: 1.4rem;
+#status span {           /* numeric values slightly larger */
+  font-size: 1.2rem;
   font-weight: 700;
 }
 /* ────────────────────────────────────────────────────────────────── */
