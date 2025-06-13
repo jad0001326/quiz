@@ -1,12 +1,12 @@
 :root {
-  --primary-color: #44CCFF;   /* bright cyan */
-  --secondary-color: #44CCFF; /* cyan (status bar, default links) */
-  --accent-color:   #7494EA;  /* periwinkle hover/focus */
-  --correct-color:  #35FF69;  /* neon green */
-  --incorrect-color:#D138BF;  /* magenta */
+  --primary-color: #44CCFF;   /* bright cyan for buttons/status bar */
+  --secondary-color: #44CCFF; /* cyan (status bar background) */
+  --accent-color:   #44CCFF;  /* cyan hover/focus */
+  --correct-color:  #35FF69;  /* neon green for correct answers */
+  --incorrect-color:#D138BF;  /* magenta for incorrect answers */
   --bg-color:       #494947;  /* dark‑grey background */
   --text-color:     #f0f0f0;
-  --tile-color:     #44CCFF;  /* cyan nav tiles */
+  --tile-color:     #D138BF;  /* magenta nav tiles */
 }
 
 * { box-sizing: border-box; }
