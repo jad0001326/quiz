@@ -1,29 +1,15 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Jolly+Lodger&display=swap" rel="stylesheet">
-  <title>QuizStorm GK</title>
-  <link rel="stylesheet" href="assets/styles.css">
-</head>
-<body>
-  <header>
-    <div id="site-header">
-      <img src="assets/lightning.jpeg" alt="Lightning storm background">
-      <h1>QuizStorm</h1>
-    </div>
+<main id="start">
 
-    <nav id="site-nav">
-      <a href="index.html">Home</a>
-      <a href="quiz.html">Quiz</a>
-      <a href="about.html">About</a>
-    </nav>
-  </header>
-  <main id="start">
+  <!-- 1. Ask for the user's name -->
+  <div id="name-block">
+    <label for="username">What is your name?</label><br>
+    <input id="username" type="text" autocomplete="name" placeholder="Your name" />
+    <button id="name-submit">Start</button>
+  </div>
+
+  <!-- 2. Difficulty selector (hidden until name entered) -->
+  <div id="difficulty-block" class="hidden">
+    <p id="greeting"></p>
 
     <label for="difficulty">Choose difficulty:</label>
     <select id="difficulty" name="difficulty">
@@ -33,17 +19,32 @@
     </select>
 
     <br><br>
-    
     <a id="play" href="#" role="button" tabindex="0">Play</a>
+  </div>
 
-    <script type="module">
-      const play = document.getElementById('play');
-      play.addEventListener('click', event => {
-        event.preventDefault(); // stop default link jump
-        const diff = document.getElementById('difficulty').value;
-        window.location = `quiz.html?difficulty=${diff}`;
-      });
-    </script>
-  </main>
-</body>
-</html>
+  <script type="module">
+    const play       = document.getElementById('play');
+    const diffBlock  = document.getElementById('difficulty-block');
+    const greeting   = document.getElementById('greeting');
+    const nameInput  = document.getElementById('username');
+    const nameBtn    = document.getElementById('name-submit');
+
+    // Show difficulty once a non‑empty name is entered
+    nameBtn.addEventListener('click', () => {
+      const name = nameInput.value.trim();
+      if (name) {
+        greeting.textContent = `Welcome ${name}! Please choose your difficulty:`;
+        document.getElementById('name-block').classList.add('hidden');
+        diffBlock.classList.remove('hidden');
+      }
+    });
+
+    // Build the quiz URL
+    play.addEventListener('click', event => {
+      event.preventDefault();
+      const diff = document.getElementById('difficulty').value;
+      window.location = `quiz.html?difficulty=${diff}`;
+    });
+  </script>
+
+</main>
