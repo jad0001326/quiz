@@ -29,6 +29,7 @@ body {
   height: 200px;
   position: relative;
   overflow: hidden;
+  border: 2px solid #000;
   margin: 25px auto 1.5rem;
 }
 
@@ -61,8 +62,8 @@ label  { font-weight: 600; }
 /* ─── Navigation tiles ───────────────────────────────────────────── */
 #site-nav {
   display: flex;
-  width: 100%;
-  margin-bottom: 0.5rem;
+  width: 75%;
+  margin: 0 auto 0.5rem;
 }
 
 #site-nav a {
