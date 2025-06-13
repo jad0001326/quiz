@@ -87,11 +87,35 @@ select {
 .hidden { display: none; }
 
 
+
 header {
   text-align: center;
   margin-bottom: 1.5rem;
   margin-top: 2rem;
 }
+
+/* ─── Primary navigation bar ─────────────────────────────────────────── */
+#site-nav {
+  background: var(--primary-color);
+  width: 100%;
+  padding: 0.6rem 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+#site-nav a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color .2s;
+}
+
+#site-nav a:hover,
+#site-nav a:focus {
+  color: #fff;
+}
+/* ────────────────────────────────────────────────────────────────────── */
 
 #status {
   background: var(--secondary-color);
