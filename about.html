@@ -2,32 +2,85 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="description" content="Learn how QuizStorm uses live questions from Open Trivia DB to deliver a fast, accessible general‑knowledge quiz." />
-  <title>About – QuizStorm</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>QuizStorm – Start</title>
+
+  <!-- Site stylesheet -->
   <link rel="stylesheet" href="assets/styles.css" />
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Jolly+Lodger&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Jolly+Lodger&display=swap" rel="stylesheet">
 </head>
+
 <body>
+
+  <!-- Hero + nav -->
   <header>
     <div id="site-header">
-      <img src="assets/lightning.jpeg" alt="Lightning storm background">
+      <img src="assets/lightning.jpeg" alt="Lightning storm background" />
       <h1>QuizStorm</h1>
     </div>
+
     <nav id="site-nav">
       <a href="index.html">Home</a>
       <a href="quiz.html">Quiz</a>
       <a href="about.html">About</a>
     </nav>
   </header>
-  <main>
-    <h1>About QuizStorm</h1>
-    <p>
-      QuizStorm is a one-page general-knowledge quiz for my SET08101 resit.
-      Questions are fetched live from <a href="https://opentdb.com/" target="_blank" rel="noopener">Open Trivia DB</a>.
-    </p>
-    <p><a href="index.html">← Back to quiz</a></p>
+
+  <!-- Landing page main content -->
+  <main id="start">
+
+    <!-- 1. Ask for the user's name -->
+    <div id="name-block">
+      <label for="username">What is your name?</label><br />
+      <input id="username" type="text" autocomplete="name" placeholder="Your name" />
+      <button id="name-submit">Start</button>
+    </div>
+
+    <!-- 2. Difficulty selector (hidden until name entered) -->
+    <div id="difficulty-block" class="hidden">
+      <p id="greeting"></p>
+
+      <label for="difficulty">Choose difficulty:</label>
+      <select id="difficulty" name="difficulty">
+        <option value="easy">Easy</option>
+        <option value="medium" selected>Medium</option>
+        <option value="hard">Hard</option>
+      </select>
+
+      <br /><br />
+      <a id="play" href="#" role="button" tabindex="0">Play</a>
+    </div>
+
+    <script type="module">
+      const play      = document.getElementById('play');
+      const diffBlock = document.getElementById('difficulty-block');
+      const greeting  = document.getElementById('greeting');
+      const nameInput = document.getElementById('username');
+      const nameBtn   = document.getElementById('name-submit');
+
+      // Reveal difficulty section once a non‑empty name is entered
+      nameBtn.addEventListener('click', () => {
+        const name = nameInput.value.trim();
+        if (name) {
+          greeting.textContent = `Welcome ${name}! Please choose your difficulty:`;
+          document.getElementById('name-block').classList.add('hidden');
+          diffBlock.classList.remove('hidden');
+        }
+      });
+
+      // Build the quiz URL with selected difficulty
+      play.addEventListener('click', event => {
+        event.preventDefault();
+        const diff = document.getElementById('difficulty').value;
+        window.location = `quiz.html?difficulty=${diff}`;
+      });
+    </script>
+
   </main>
+
 </body>
 </html>
