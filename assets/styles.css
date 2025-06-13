@@ -1,7 +1,7 @@
 :root {
   --primary-color: #44CCFF;   /* bright cyan */
-  --secondary-color: #D138BF; /* magenta for status/timer bar */
-  --accent-color:   #E46ADF;  /* lighter magenta for hover */
+  --secondary-color: #D138BF; /* magenta for status bar */
+  --accent-color:   #E46ADF;  /* lighter magenta hover */
   --correct-color:  #35FF69;  /* neon green */
   --incorrect-color:#D138BF;  /* magenta */
   --bg-color:       #494947;  /* dark grey background */
@@ -29,8 +29,8 @@ body {
   height: 200px;
   position: relative;
   overflow: hidden;
-  border: 2px solid #000;
   margin: 25px auto 1.5rem;
+  border: 2px solid #000;   /* match nav border */
 }
 
 #site-header img {
@@ -56,7 +56,6 @@ body {
 h1, h2, #site-nav a { font-family: 'Chewy', cursive; }
 
 main, section { max-width: 600px; width: 100%; }
-header { width: 100%; }
 label  { font-weight: 600; }
 
 /* ─── Navigation tiles ───────────────────────────────────────────── */
@@ -64,7 +63,7 @@ label  { font-weight: 600; }
   display: flex;
   width: 75%;
   margin: 0 auto 0.5rem;
-  border: 2px solid #000;   /* match hero border so widths align */
+  border: 2px solid #000;
 }
 
 #site-nav a {
@@ -73,30 +72,41 @@ label  { font-weight: 600; }
   text-align: center;
   background: var(--tile-color);
   color: #fff;
-  border: 2px solid #000;
+  border-left: 2px solid #000;
   padding: 1rem 0.5rem;
-  font-size: 1.4rem;
+  font-size: 1.4rem;  /* larger font */
   text-decoration: none;
   transition: background .2s;
 }
+#site-nav a:first-child { border-left: none; }
 
 #site-nav a:hover,
 #site-nav a:focus { background: var(--accent-color); }
 /* ────────────────────────────────────────────────────────────────── */
 
-/* Status bar */
+/* ─── Compact score / timer bar ──────────────────────────────────── */
 #status {
   background: var(--secondary-color);
-  padding: .4rem 1rem;
-  border-radius: 4px;
-  color: #000;
-  max-width: 500px;
-  width: 100%;
+  max-width: 340px;      /* narrower bar */
+  width: 75%;
+  height: 42px;          /* slim height */
   margin: 0 auto 1rem;
+  border-radius: 4px;
+
   display: flex;
+  align-items: center;   /* vertically centre numbers */
   justify-content: space-between;
+  padding: 0 1rem;       /* horizontal padding only */
+
   font-weight: 600;
+  font-size: 1.1rem;     /* smaller label text */
 }
+
+#status span {           /* numeric values larger */
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+/* ────────────────────────────────────────────────────────────────── */
 
 /* Quiz card */
 #card { max-width: 600px; width: 100%; margin: 1rem auto 2rem; }
@@ -117,25 +127,51 @@ ul#answers li.wrong  { background: var(--incorrect-color); border-color: var(--i
 
 /* Buttons */
 button,
-a#play {
+a#play,
+#name-block button {
   display: inline-block;
-  padding: .6rem 1.4rem;
+  padding: .8rem 1.8rem;
   background: var(--primary-color);
   color: #fff;
   text-decoration: none;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  font-size: 1.6rem;
   transition: background .2s;
 }
 button:hover,
-a#play:hover { background: var(--accent-color); }
+a#play:hover,
+#name-block button:hover { background: var(--accent-color); }
 
 button:focus-visible,
 a#play:focus-visible,
 ul#answers li:focus-visible {
   outline: 2px solid var(--accent-color);
   outline-offset: 2px;
+}
+
+/* Name & difficulty blocks */
+#name-block {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+#name-block input {
+  font-size: 1.6rem;
+  padding: .8rem 1.2rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+#difficulty-block label,
+#difficulty-block select,
+#play {
+  font-size: 1.6rem;
+}
+#difficulty-block select {
+  padding: .8rem 1.2rem;
+}
+#difficulty-block p {
+  margin: 0 0 1rem;
 }
 
 /* Trophy celebration */
@@ -154,58 +190,12 @@ ul#answers li:focus-visible {
   100% { transform: translateY(0)   scale(1)    rotate(0deg); }
 }
 
-/* ─── Landing-page sizing tweaks ────────────────────────────────── */
-#name-block {
-  text-align: center;
-  margin-bottom: 1.5rem;
-}
-#name-block input {
-  font-size: 1.6rem;      /* bigger text in the name box   */
-  padding: 0.8rem 1.2rem; /* taller & wider hit-area       */
-  border-radius: 4px;
-  border: 1px solid #ccc;
-}
-
-#name-block button {
-  font-size: 1.6rem;      /* same size as the input        */
-  padding: 0.8rem 1.8rem;
-  background: var(--primary-color);
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background .2s;
-}
-
-#name-block button:hover {
-  background: var(--accent-color);
-}
-
-#difficulty-block label,
-#difficulty-block select,
-#play {
-  font-size: 1.6rem;      /* larger label, dropdown, Play  */
-}
-
-#difficulty-block select {
-  padding: 0.8rem 1.2rem; /* dropdown taller & wider       */
-}
-
-#difficulty-block p {
-  margin-top: 0;
-  margin-bottom: 1rem;
-}
-
-#play {
-  padding: 0.8rem 1.8rem; /* larger Play button            */
-}
-/* ──────────────────────────────────────────────────────────────── */
 /* Mobile */
 @media (max-width: 480px) {
   body { padding: 1rem; }
   button, a#play { width: 100%; text-align: center; }
   #site-nav { flex-direction: column; }
-  #site-nav a { margin-bottom: .5rem; }
+  #site-nav a { border-left: none; border-top: 2px solid #000; }
   #site-header { width: 100%; height: 140px; }
   #site-header h1 { font-size: 100px; }
 }
