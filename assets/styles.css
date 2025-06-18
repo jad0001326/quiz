@@ -244,3 +244,8 @@ ul#answers li:focus-visible {
   justify-content: center;
   margin-top: 1.5rem;
 }
+
+/* utility – collapses any element when .hidden is added */
+.hidden {
+  display: none !important;
+}
