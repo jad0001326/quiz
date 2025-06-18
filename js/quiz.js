@@ -114,6 +114,13 @@ function endGame () {
   // hide the score/timer bar
   document.getElementById('status')?.classList.add('hidden');
 
+  // hide the score/timer bar
+document.getElementById('status')?.classList.add('hidden');
+/* ---------- add these two lines ---------- */
+const statusBar = document.getElementById('status');
+if (statusBar) statusBar.style.display = 'none';
+/* ----------------------------------------- */
+
   // bring the results section into view
   // endScreen.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
