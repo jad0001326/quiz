@@ -89,7 +89,7 @@ label  { font-weight: 600; }
 #status {
   background: var(--secondary-color);
   max-width: 420px;
-  width: 100%;
+  width: 75%;
   height: 64px;
   margin: 0 auto 1rem;
   border-radius: 4px;
@@ -98,10 +98,15 @@ label  { font-weight: 600; }
   align-items: center;
   justify-content: space-between;
   padding: 0 1rem;
+  gap: 0.5rem;         /* space between score and timer */
+  white-space: nowrap; /* keep score & timer on one line */
+  line-height: 64px;   /* vertically centre the text */
 
   font-weight: 600;
   font-size: 1.2rem;
 }
+
+#timer { margin-left: .25rem; }
 
 #status span {
   font-size: 1.8rem;
@@ -144,7 +149,8 @@ a#play,
 }
 button:hover,
 a#play:hover,
-#name-block button:hover { background: var(--accent-color); }
+#name-block button:hover,
+.btn:hover { background: var(--accent-color); }
 
 button:focus-visible,
 a#play:focus-visible,
