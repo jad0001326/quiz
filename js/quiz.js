@@ -111,6 +111,9 @@ function endGame () {
   nextBtn.classList.add('hidden');  // ensure Next button is hidden at quiz end
   endScreen.classList.remove('hidden');
 
+  // hide the score/timer bar
+  document.getElementById('status')?.classList.add('hidden');
+
   // bring the results section into view
   // endScreen.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
@@ -123,6 +126,7 @@ function endGame () {
 
   // clear the “0 / 10” score text so it’s not stuck on the end screen
   scoreEl.textContent = '';
+  timerEl.textContent = '';
 
   // Trophy celebration (any non-zero score)
   const trophy = document.getElementById('trophy');
