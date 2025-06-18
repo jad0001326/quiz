@@ -107,11 +107,12 @@ function endGame () {
 
   // hide the question card, show the end screen
   card.classList.add('hidden');
+  card.style.display = 'none';      // force removal of layout space
   nextBtn.classList.add('hidden');  // ensure Next button is hidden at quiz end
   endScreen.classList.remove('hidden');
 
   // bring the results section into view
-  endScreen.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  // endScreen.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
   // show the final score
   if (playerName) {
