@@ -7,6 +7,9 @@ import { startTimer }     from './timer.js';
 // ---------- DOM helpers ----------
 const $ = sel => document.querySelector(sel);
 
+// ---------- Player name ----------
+const playerName = localStorage.getItem('playerName') || '';
+
 const card       = $('#card');
 const qEl        = $('#question');
 const answersEl  = $('#answers');
@@ -108,7 +111,11 @@ function endGame () {
   endScreen.classList.remove('hidden');
 
   // show the final score
-  finalMsgEl.textContent = `You scored ${score} out of ${questions.length}!`;
+  if (playerName) {
+    finalMsgEl.textContent = `${playerName}, you scored ${score} out of ${questions.length}! Well done!`;
+  } else {
+    finalMsgEl.textContent = `You scored ${score} out of ${questions.length}!`;
+  }
 
   // clear the “0 / 10” score text so it’s not stuck on the end screen
   scoreEl.textContent = '';

@@ -64,6 +64,8 @@
         const name = nameInput.value.trim();
         if (name) {
           greeting.textContent = `Welcome ${name}! Please choose your difficulty:`;
+          // persist the name for the quiz page
+          localStorage.setItem('playerName', name);
           document.getElementById('name-block').classList.add('hidden');
           diffBlock.classList.remove('hidden');
         }
@@ -73,6 +75,7 @@
       play.addEventListener('click', event => {
         event.preventDefault();
         const diff = document.getElementById('difficulty').value;
+        localStorage.setItem('playerName', nameInput.value.trim());
         window.location = `quiz.html?difficulty=${diff}`;
       });
     </script>
