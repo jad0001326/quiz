@@ -88,15 +88,15 @@ label  { font-weight: 600; }
 /* ─── Compact score / timer bar ──────────────────────────────────── */
 #status {
   background: var(--secondary-color);
-  max-width: 420px;
-  width: 75%;
+  max-width: none;
+  width: auto;
   height: 64px;
   margin: 0 auto 1rem;
   border-radius: 4px;
 
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: 0 1rem;
   gap: 0.5rem;         /* space between score and timer */
   white-space: nowrap; /* keep score & timer on one line */
