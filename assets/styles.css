@@ -10,6 +10,11 @@
   --tile-color:     #D138BF;  /* magenta nav tiles */
 }
 
+/* utility – collapses any element when .hidden is added */
+.hidden { 
+  display: none !important;
+}
+
 * { box-sizing: border-box; }
 
 body {
