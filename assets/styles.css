@@ -89,7 +89,7 @@ label  { font-weight: 600; }
 #status {
   background: var(--secondary-color);
   max-width: 420px;
-  width: 100%;
+  width: 75%;            /* match hero/nav width */
   height: 64px;
   margin: 0 auto 1rem;
   border-radius: 4px;
@@ -98,6 +98,7 @@ label  { font-weight: 600; }
   align-items: center;
   justify-content: space-between;
   padding: 0 1rem;
+  gap: 0.5rem;           /* visual space between score and time */
 
   font-weight: 600;
   font-size: 1.2rem;
@@ -107,6 +108,8 @@ label  { font-weight: 600; }
   font-size: 1.8rem;
   font-weight: 700;
 }
+/* Ensure timer doesn't butt against score if gap fails */
+#timer { margin-left: .25rem; }
 /* ────────────────────────────────────────────────────────────────── */
 
 /* Quiz card */
@@ -144,7 +147,8 @@ a#play,
 }
 button:hover,
 a#play:hover,
-#name-block button:hover { background: var(--accent-color); }
+#name-block button:hover,
+.btn:hover { background: var(--accent-color); }
 
 button:focus-visible,
 a#play:focus-visible,
