@@ -204,6 +204,13 @@ ul#answers li:focus-visible {
   100% { transform: translateY(0)   scale(1)    rotate(0deg); }
 }
 
+/* Result message */
+#final-msg {
+  font-size: 2rem;     /* bigger text */
+  text-align: center;  /* centred */
+  margin: 2rem 0 1rem; /* space above and below */
+}
+
 /* Mobile */
 @media (max-width: 480px) {
   body { padding: 1rem; }
