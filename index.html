@@ -55,6 +55,7 @@
     <script type="module">
       const play      = document.getElementById('play');
       const diffBlock = document.getElementById('difficulty-block');
+      const diffSelect = document.getElementById('difficulty');
       const greeting  = document.getElementById('greeting');
       const nameInput = document.getElementById('username');
       const nameBtn   = document.getElementById('name-submit');
@@ -64,16 +65,17 @@
         const name = nameInput.value.trim();
         if (name) {
           greeting.textContent = `Welcome ${name}! Please choose your difficulty:`;
-          // persist the name for the quiz page
           localStorage.setItem('playerName', name);
-          document.getElementById('name-block').classList.add('hidden');
-          diffBlock.classList.remove('hidden');
+          diffBlock.classList.remove('hidden');  // show difficulty section
+          play.classList.add('hidden');          // keep Play hidden for now
         }
       });
 
-      // show Play button only after difficulty selected
-      document.getElementById('difficulty').addEventListener('change', () => {
-        play.classList.remove('hidden');
+      // Reveal Play button when a difficulty is selected
+      diffSelect.addEventListener('change', () => {
+        if (diffSelect.value) {
+          play.classList.remove('hidden');
+        }
       });
 
       // Build the quiz URL with selected difficulty
