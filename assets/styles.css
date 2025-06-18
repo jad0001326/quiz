@@ -117,6 +117,11 @@ label  { font-weight: 600; }
 /* Quiz card */
 #card { max-width: 600px; width: 100%; margin: 1rem auto 2rem; }
 
+/* Larger label on landing page */
+#name-block label {
+  font-size: 1.8rem;   /* matches the input height */
+}
+
 /* Answer list */
 ul#answers { list-style: none; padding: 0; }
 ul#answers li {
@@ -202,6 +207,12 @@ ul#answers li:focus-visible {
   50%  { transform: translateY(0)   scale(1.05) rotate(-3deg); }
   80%  { transform: translateY(0)   scale(1)    rotate(3deg); }
   100% { transform: translateY(0)   scale(1)    rotate(0deg); }
+}
+
+/* Bigger label for the landing-page name prompt */
+.big-label {
+  font-size: 1.8rem;
+  font-weight: 600;
 }
 
 /* Result message */

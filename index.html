@@ -32,7 +32,7 @@
 
     <!-- 1. Ask for the user's name -->
     <div id="name-block">
-      <label for="username">What is your name?</label><br />
+      <label for="username" class="big-label">What is your name?</label><br />
       <input id="username" type="text" autocomplete="name" placeholder="Your name" />
       <button id="name-submit">Start</button>
     </div>
@@ -49,7 +49,7 @@
       </select>
 
       <br /><br />
-      <a id="play" href="#" role="button" tabindex="0">Play</a>
+      <a id="play" class="hidden" href="#" role="button" tabindex="0">Play</a>
     </div>
 
     <script type="module">
@@ -69,6 +69,11 @@
           document.getElementById('name-block').classList.add('hidden');
           diffBlock.classList.remove('hidden');
         }
+      });
+
+      // show Play button only after difficulty selected
+      document.getElementById('difficulty').addEventListener('change', () => {
+        play.classList.remove('hidden');
       });
 
       // Build the quiz URL with selected difficulty
