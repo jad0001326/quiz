@@ -110,6 +110,9 @@ function endGame () {
   nextBtn.classList.add('hidden');  // ensure Next button is hidden at quiz end
   endScreen.classList.remove('hidden');
 
+  // bring the results section into view
+  endScreen.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
   // show the final score
   if (playerName) {
     finalMsgEl.textContent = `${playerName}, you scored ${score} out of ${questions.length}! Well done!`;
