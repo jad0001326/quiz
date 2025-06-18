@@ -53,7 +53,7 @@ function renderQuestion () {
   // show nothing on the first question so “0 / 10” doesn’t flash
 scoreEl.textContent = (current === 0 && score === 0)
   ? ''
-  : `${score} / ${questions.length}`;
+  : `${score}/${questions.length}`;
   nextBtn.classList.add('hidden');
   answersEl.classList.remove('locked');
   card.classList.remove('hidden');
@@ -72,7 +72,7 @@ function handleAnswer (li, correct) {
   });
 
   if (li.textContent === correct) score++;
-  scoreEl.textContent = `${score} / ${questions.length}`;
+  scoreEl.textContent = `${score}/${questions.length}`;
 
   nextBtn.classList.remove('hidden');
 }
