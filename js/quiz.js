@@ -85,6 +85,11 @@ nextBtn.addEventListener('click', () => {
 
 // ---------- Timer & End ----------
 function updateTimer (sec) {
+  // Some browsers deliver milliseconds → convert to seconds if value is too large
+  if (sec > 600) {        // >10 minutes in seconds means it's probably ms
+    sec = Math.round(sec / 1000);
+  }
+
   // Clamp negative values
   if (sec < 0) sec = 0;
 
