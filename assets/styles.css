@@ -135,8 +135,24 @@ label  { font-weight: 600; }
 
 /* Larger label for Choose-difficulty (same size as name prompt) */
 #difficulty-block label {
-  font-size: 1.8rem;
+  font-size: 1.6rem;   /* same size as name prompt text */
   font-weight: 600;
+}
+
+/* Center the dynamic greeting text */
+#greeting {
+  text-align: center;
+  font-size: 1.6rem;
+  margin: 1.5rem 0;
+}
+
+/* Center the difficulty selector group */
+#difficulty-block {
+  display: flex;
+  flex-direction: column;  /* stack label + select */
+  align-items: center;     /* center horizontally */
+  text-align: center;
+  gap: 0.8rem;
 }
 
 /* Answer list */
@@ -260,4 +276,8 @@ ul#answers li:focus-visible {
 /* utility – collapses any element when .hidden is added */
 .hidden {
   display: none !important;
+}
+
+#play {
+  margin: 1.2rem auto 0;   /* center and add spacing below dropdown */
 }
