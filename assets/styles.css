@@ -255,6 +255,21 @@ ul#answers li:focus-visible {
   margin: 2rem 0 1rem; /* space above and below */
 }
 
+# Force Chewy font on nav links everywhere
+# This ensures nav tiles always use Chewy, regardless of other rules.
+# (Placed just above the @media block.)
+# See: instructions
+# (If you move the nav, this will still apply.)
+# (Retain !important for specificity.)
+# (Chewy must be loaded in HTML head for effect.)
+# (Do not remove previous Chewy rules for headings.)
+# (This is intentionally duplicated for robustness.)
+# (No need to wrap in @media.)
+/* Force Chewy font on nav links everywhere */
+#site-nav a {
+  font-family: 'Chewy', cursive !important;
+}
+
 /* Mobile */
 @media (max-width: 480px) {
   body { padding: 1rem; }
