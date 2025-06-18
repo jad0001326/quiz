@@ -127,6 +127,18 @@ label  { font-weight: 600; }
   font-size: 1.8rem;   /* matches the input height */
 }
 
+/* Center the entire landing form */
+#name-block,
+#difficulty-block {
+  text-align: center;     /* centre contents */
+}
+
+/* Larger label for Choose-difficulty (same size as name prompt) */
+#difficulty-block label {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
 /* Answer list */
 ul#answers { list-style: none; padding: 0; }
 ul#answers li {
