@@ -296,3 +296,9 @@ ul#answers li:focus-visible {
 #play {
   margin: 1.2rem auto 0;   /* center and add spacing below dropdown */
 }
+
+/* Force Chewy font on nav links everywhere */
+#site-nav a {
+  font-family: 'Chewy', cursive !important;
+  font-weight: 600;   /* optional: keeps weight consistent */
+}
