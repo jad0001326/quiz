@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
 :root {
   --primary-color: #44CCFF;   /* bright cyan */
   --secondary-color: #D138BF; /* magenta for status bar */
@@ -12,7 +13,7 @@
 * { box-sizing: border-box; }
 
 body {
-  font-family: system-ui, sans-serif;
+  font-family: 'Montserrat', system-ui, sans-serif;
   margin: 0;
   padding: 2rem;
   line-height: 1.5;
@@ -87,23 +88,23 @@ label  { font-weight: 600; }
 /* ─── Compact score / timer bar ──────────────────────────────────── */
 #status {
   background: var(--secondary-color);
-  max-width: 600px;        /* wider bar */
+  max-width: 420px;
   width: 100%;
-  height: 100px;            /* taler bar */
+  height: 64px;
   margin: 0 auto 1rem;
   border-radius: 4px;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 1rem;         /* slightly more horizontal space */
+  padding: 0 1rem;
 
   font-weight: 600;
-  font-size: 5rem;         /* larger label text */
+  font-size: 1.2rem;
 }
 
-#status span {           /* numeric values slightly larger */
-  font-size: 1.4rem;         /* larger numeric values */
+#status span {
+  font-size: 1.8rem;
   font-weight: 700;
 }
 /* ────────────────────────────────────────────────────────────────── */

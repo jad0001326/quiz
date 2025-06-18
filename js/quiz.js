@@ -57,6 +57,9 @@ scoreEl.textContent = (current === 0 && score === 0)
   nextBtn.classList.add('hidden');
   answersEl.classList.remove('locked');
   card.classList.remove('hidden');
+
+  // ensure trophy hidden during the quiz
+  document.getElementById('trophy')?.classList.add('hidden');
 }
 
 // ---------- Interaction ----------
@@ -82,6 +85,9 @@ nextBtn.addEventListener('click', () => {
 
 // ---------- Timer & End ----------
 function updateTimer (sec) {
+  // Clamp negative values
+  if (sec < 0) sec = 0;
+
   const mm = String(Math.floor(sec / 60)).padStart(2, '0');
   const ss = String(sec % 60).padStart(2, '0');
   timerEl.textContent = `${mm}:${ss}`;
@@ -93,6 +99,7 @@ function endGame () {
 
   // hide the question card, show the end screen
   card.classList.add('hidden');
+  nextBtn.classList.add('hidden');  // ensure Next button is hidden at quiz end
   endScreen.classList.remove('hidden');
 
   // show the final score
@@ -113,4 +120,3 @@ function endGame () {
     }, 5000);
   }
 }
-
