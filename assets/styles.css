@@ -169,10 +169,11 @@ ul#answers li {
 ul#answers li:hover  { background: #5a5a5a; }
 ul#answers li.right  { background: var(--correct-color);  border-color: var(--correct-color); }
 /* Highlight wrong answers in red with readable text */
+/* Highlight wrong answers in red with readable text */
 ul#answers li.wrong {
-  background: var(--incorrect-color);
-  border-color: var(--incorrect-color);
-  color: #000; /* black text for contrast */
+  background: #D62828 !important;
+  border-color: #D62828 !important;
+  color: #000 !important; /* black text for contrast */
 }
 
 /* Buttons */
