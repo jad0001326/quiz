@@ -4,7 +4,6 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>QuizStorm – Start</title>
-
   <link rel="stylesheet" href="assets/styles.css" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,10 +15,12 @@
 
   <header>
     <div id="site-header">
+      <!-- quiz storm background from original site credit Group 44 Callum'(s)-->
       <img src="assets/lightning.jpeg" alt="Lightning storm background" />
       <h1>QuizStorm</h1>
     </div>
 
+    <!--Navigation bar-->
     <nav id="site-nav">
       <a href="index.html">Home</a>
       <a href="quiz.html">Quiz</a>
@@ -30,14 +31,14 @@
   <!-- Landing page main content -->
   <main id="start">
 
-    <!-- 1. Ask for the user's name -->
+    <!-- Ask for the users name -->
     <div id="name-block">
       <label for="username" class="big-label">What is your name?</label><br />
       <input id="username" type="text" autocomplete="name" placeholder="Your name" />
       <button id="name-submit">Start</button>
     </div>
 
-    <!-- 2. Difficulty selector (hidden until name entered) -->
+    <!-- Difficulty level -->
     <div id="difficulty-block" class="hidden">
       <p id="greeting"></p>
 
