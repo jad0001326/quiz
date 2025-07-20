@@ -2,17 +2,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Chewy&display=swap');
 
 :root {
-  --primary-color: #44CCFF;   /* bright cyan */
-  --secondary-color: #D138BF; /* magenta for status bar */
-  --accent-color:   #E46ADF;  /* lighter magenta hover */
-  --correct-color:  #35FF69;  /* neon green */
-  --incorrect-color:#D62828;  /* red for wrong answers */
-  --bg-color:       #494947;  /* dark grey background */
+  --primary-color: #44CCFF; 
+  --secondary-color: #D138BF; 
+  --accent-color:   #E46ADF;  
+  --correct-color:  #35FF69;  
+  --incorrect-color:#D62828;  
+  --bg-color:       #494947; 
   --text-color:     #f0f0f0;
-  --tile-color:     #D138BF;  /* magenta nav tiles */
+  --tile-color:     #D138BF;  
 }
 
-/* utility – collapses any element when .hidden is added */
+/* utility – collapses any part when .hidden is added */
 .hidden {
   display: none !important;
 }
