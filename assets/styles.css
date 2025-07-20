@@ -35,15 +35,15 @@ body {
 #site-header {
   width: 75%;
   margin: 25px auto 1.5rem;
-  position: relative;     /* for absolutely‑positioned <h1> */
-  /* remove height and overflow */
+  position: relative;     
+ 
 }
 
 #site-header img {
-  display: block;         /* kills the little inline‑image gap */
-  width: 100%;            /* fluid width */
-  height: auto;           /* preserve aspect ratio */
-  object-fit: cover;      /* optional if you ever constrain height elsewhere */
+  display: block;         
+  width: 100%;         
+  height: auto;           
+  object-fit: cover;      
   opacity: 0.9;
 }
 
