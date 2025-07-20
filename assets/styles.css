@@ -34,6 +34,7 @@ body {
 /* ─── Site Header / Hero Banner ─── */
 #site-header {
   width: 75%;
+  height: 200px;
   position: relative;
   margin: 25px auto 1.5rem;
   border: 2px solid #000;   /* match nav border */
