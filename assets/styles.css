@@ -33,8 +33,8 @@ body {
 
 /* ─── Site Header / Hero Banner ─── */
 #site-header {
-  width: 75%;
-  height: 200px;
+  width: 100%;
+  height: 100px;
   position: relative;
   overflow: hidden;
   margin: 25px auto 1.5rem;
